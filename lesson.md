@@ -175,6 +175,8 @@ You will see the logs printed out in your console. Once the pipeline is complete
 
 ### Add an Extractor to Pull Data from Postgres (Supabase)
 
+In your existing GCP project, go to BigQuery. Then create a dataset in BigQuery called `resale` (multi-region: US).
+
 We will use the `tap-postgres` extractor to pull data from a Postgres database hosted on [Supabase](https://supabase.com). 
 
 > Supabase is an open-source backend-as-a-service platform that provides a suite of tools for building applications powered by PostgreSQL (Postgres) as its database. Postgres is a powerful, object-relational database system known for its reliability, extensibility and compliance with SQL standards. Supabase simplifies database management by offering an intuitive interface to interact with Postgres, making it a popular choice for developers looking for a scalable and flexible backend solution.
