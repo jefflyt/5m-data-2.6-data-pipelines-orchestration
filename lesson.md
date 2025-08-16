@@ -324,7 +324,6 @@ Then install the Python dependencies by:
 
 ```bash
 cd dagster-orchestration
-pip install -e ".[dev]"
 ```
 
 ### Introduction to Software-Defined Assets, Pipelines, Jobs and Schedule
