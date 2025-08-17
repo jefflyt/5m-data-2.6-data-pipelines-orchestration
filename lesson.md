@@ -320,7 +320,7 @@ dagster project scaffold --name dagster-orchestration
 
 After running this command, you should see a new directory called `dagster-orchestration` in your current directory. This directory contains the files that make up your Dagster project. 
 
-Then install the Python dependencies by:
+Then switch into the folder by:
 
 ```bash
 cd dagster-orchestration
