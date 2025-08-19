@@ -258,7 +258,7 @@ You will see the logs printed out in your console. Once the pipeline is complete
 
 ### Create Dbt project
 
-Let's create a Dbt project to transform the data in BigQuery. Before that please exit the `meltano-ingestion` folder by using the command `cd ..`.
+Let's create a Dbt project to transform the data in BigQuery. Before that please exit the `meltano-resale` folder by using the command `cd ..`.
 
 To create a new dbt project.
 
@@ -266,7 +266,15 @@ To create a new dbt project.
 dbt init resale_flat
 ```
 
-Fill in the required config details.
+Fill in the required config details. 
+- use service account
+- add your path of the json key file
+- dataset: resale
+- project: your GCP project ID
+
+Please note that the profiles is located at the hidden folder .dbt of your home folder. The `profiles.yml` that is located in the home folder includes multiple projects. Alternatively, you can create a seprate `profiles.yml` for each project.
+
+To create separate profiles for each project, create a new file called `profiles.yml` under `resale_flat` folder. Then copy the following to `profiles.yml`. Remember to change your key file location and your project ID.
 ```yaml
 resale_flat:
   outputs:
