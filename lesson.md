@@ -189,7 +189,7 @@ From Supabase, take note of your connection details from the Connection window, 
 
 We're going to add an extrator for Postgress to get our data. An extractor is responsible for pulling data out of any data source. We will use the `tap-postgress` extractor to pull data from the Supabase server. 
 
-Create a new Meltano project by running:
+Please exit `meltano-ingestion` folder, use `cd ..` to return to the root folder. Create a new Meltano project by running:
 
 ```bash
 meltano init meltano-resale
@@ -267,6 +267,23 @@ dbt init resale_flat
 ```
 
 Fill in the required config details.
+```yaml
+resale_flat:
+  outputs:
+    dev:
+      dataset: resale
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: /Users/zanelim/Downloads/personal/secret/meltano-learn-03934027c1d8.json # Use your path of key file
+      location: US
+      method: service-account
+      priority: interactive
+      project: meltano-learn # enter your google project id
+      threads: 1
+      type: bigquery
+  target: dev
+```
+
 
 ### Create source and models
 
@@ -355,10 +372,18 @@ We will configure an I/O manager for reading/writing to database (file to storag
 
 We will now create the assets and definitions for our pipeline.
 
-Replace the content in `dagster-orchestration/dagster_orchestration/assets.py` with the below. Also you need to replace `<YOUR-GITHUB-PERSONAL-ACCESS-TOKEN>` with your Github personal access token.
+First, we need to create a hidden file call `.env`. Inside the `.env` file, we need to add the following:
 
+```yaml
+GITHUB_TOKEN='<YOUR-GITHUB-PERSONAL-ACCESS-TOKEN>'
+```
+Replace the `<YOUR-GITHUB-PERSONAL-ACCESS-TOKEN>` with your Github personal access token.
+
+Finally, you need to replace the content in `dagster-orchestration/dagster_orchestration/assets.py` with the below. 
 ```python
 import base64
+import dotenv
+import os
 from io import BytesIO
 from typing import Dict
 
@@ -367,12 +392,13 @@ import pandas as pd
 import requests
 from dagster import AssetExecutionContext, MetadataValue, asset
 
+dotenv.load_dotenv()
 
 @asset
 def pandas_releases(
     context: AssetExecutionContext,
 ) -> pd.DataFrame:
-    access_token = "<YOUR-GITHUB-PERSONAL-ACCESS-TOKEN>"
+    access_token = os.getenv("GITHUB_TOKEN")  # Get the GitHub access token from the environment
     response = requests.get(
         "https://api.github.com/repos/pandas-dev/pandas/releases?per_page=100",
         headers={
