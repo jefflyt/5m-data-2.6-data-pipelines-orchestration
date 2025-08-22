@@ -110,6 +110,11 @@ meltano select tap-github releases tag_name
 meltano select tap-github releases body
 meltano select tap-github releases published_at
 ```
+To only see selected entities and attributes, run:
+```bash
+meltano select tap-github --list
+meltano select tap-github --list --exclude
+```
 
 Finally, we can test the connection using the command below:
 ```bash
@@ -136,7 +141,9 @@ The extracted data will be dumped into a JSON file in the `output/` directory.
 
 You can find the above tutorial here: https://docs.meltano.com/getting-started/part1/#select-entities-and-attributes-to-extract
 
-### Add a Loader to Load Data into BigQuery
+---
+# 01:29:04
+### Add a Loader to Load Data into BigQuery 
 
 In your existing GCP project, go to BigQuery. Then create a dataset in BigQuery called `ingestion` (multi-region: US).
 
