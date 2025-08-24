@@ -1,35 +1,33 @@
 version: 1
 default_environment: dev
-project_id: e764b6dd-f318-4333-af5b-640f96b80a8d
+project_id: f03cdf0f-d30c-4506-9515-a278dbcfb5f1
 environments:
 - name: dev
 - name: staging
 - name: prod
 plugins:
   extractors:
-  - name: tap-github
+  - name: tap-postgres
     variant: meltanolabs
-    pip_url: meltanolabs-tap-github
+    pip_url: meltanolabs-tap-postgres
     config:
-      repositories:
-      - pandas-dev/pandas
-    select:
-    - releases.tag_name
-    - releases.body
-    - releases.published_at
+      database: postgres
+      filter_schemas:
+      - public
+      host: aws-1-ap-southeast-1.pooler.supabase.com
+      port: 5432
+      user: postgres.ioavqbkdsmlzxubamboc
   loaders:
-  - name: target-jsonl
-    variant: andyh1203
-    pip_url: target-jsonl
   - name: target-bigquery
     variant: z3z1ma
     pip_url: git+https://github.com/z3z1ma/target-bigquery.git
     config:
+      batch_size: 104857600
       credentials_path: 
         /Users/jefflee/SCTP/5m-data-2.6-data-pipelines-orchestration/meltano-ingestion/my-sctp-project-31844-e80d83cfc65a.json
-      dataset: Ingestion
+      dataset: resale
+      denormalized: true
       flattening_enabled: true
       flattening_max_depth: 1
       method: batch_job
       project: my-sctp-project-31844
-      denormalized: true

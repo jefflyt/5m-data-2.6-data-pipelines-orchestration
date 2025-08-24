@@ -141,8 +141,6 @@ The extracted data will be dumped into a JSON file in the `output/` directory.
 
 You can find the above tutorial here: https://docs.meltano.com/getting-started/part1/#select-entities-and-attributes-to-extract
 
----
-# 01:29:04
 ### Add a Loader to Load Data into BigQuery 
 
 In your existing GCP project, go to BigQuery. Then create a dataset in BigQuery called `ingestion` (multi-region: US).
