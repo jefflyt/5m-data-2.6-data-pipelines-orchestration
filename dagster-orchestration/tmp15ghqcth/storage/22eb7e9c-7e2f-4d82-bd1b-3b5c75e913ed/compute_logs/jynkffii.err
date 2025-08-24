@@ -1,6 +1,0 @@
-[32m2025-08-24 13:41:24 +0800[0m - dagster - [34mDEBUG[0m - pandas_job - 22eb7e9c-7e2f-4d82-bd1b-3b5c75e913ed - 24592 - LOGS_CAPTURED - Started capturing logs in process (pid: 24592).
-[32m2025-08-24 13:41:24 +0800[0m - dagster - [34mDEBUG[0m - pandas_job - 22eb7e9c-7e2f-4d82-bd1b-3b5c75e913ed - 24592 - pandas_releases - STEP_START - Started execution of step "pandas_releases".
-[32m2025-08-24 13:41:25 +0800[0m - dagster - [34mDEBUG[0m - pandas_job - 22eb7e9c-7e2f-4d82-bd1b-3b5c75e913ed - 24592 - pandas_releases - STEP_OUTPUT - Yielded output "result" of type "DataFrame". (Type check passed).
-[32m2025-08-24 13:41:25 +0800[0m - dagster - [34mDEBUG[0m - pandas_job - 22eb7e9c-7e2f-4d82-bd1b-3b5c75e913ed - 24592 - pandas_releases - ASSET_MATERIALIZATION - Materialized value pandas_releases.
-[32m2025-08-24 13:41:25 +0800[0m - dagster - [34mDEBUG[0m - pandas_job - 22eb7e9c-7e2f-4d82-bd1b-3b5c75e913ed - 24592 - pandas_releases - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
-[32m2025-08-24 13:41:25 +0800[0m - dagster - [34mDEBUG[0m - pandas_job - 22eb7e9c-7e2f-4d82-bd1b-3b5c75e913ed - 24592 - pandas_releases - STEP_SUCCESS - Finished execution of step "pandas_releases" in 991ms.

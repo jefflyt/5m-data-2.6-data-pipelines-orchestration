@@ -1,8 +1,0 @@
-[32m2025-08-24 13:44:13 +0800[0m - dagster - [34mDEBUG[0m - pandas_job - cc64d4d6-1dcb-48da-91c7-482f7b89ea48 - 24637 - LOGS_CAPTURED - Started capturing logs in process (pid: 24637).
-[32m2025-08-24 13:44:13 +0800[0m - dagster - [34mDEBUG[0m - pandas_job - cc64d4d6-1dcb-48da-91c7-482f7b89ea48 - 24637 - summary_statistics - STEP_START - Started execution of step "summary_statistics".
-[32m2025-08-24 13:44:13 +0800[0m - dagster - [34mDEBUG[0m - pandas_job - cc64d4d6-1dcb-48da-91c7-482f7b89ea48 - 24637 - summary_statistics - LOADED_INPUT - Loaded input "pandas_releases" using input manager "io_manager"
-[32m2025-08-24 13:44:13 +0800[0m - dagster - [34mDEBUG[0m - pandas_job - cc64d4d6-1dcb-48da-91c7-482f7b89ea48 - 24637 - summary_statistics - STEP_INPUT - Got input "pandas_releases" of type "DataFrame". (Type check passed).
-[32m2025-08-24 13:44:14 +0800[0m - dagster - [34mDEBUG[0m - pandas_job - cc64d4d6-1dcb-48da-91c7-482f7b89ea48 - 24637 - summary_statistics - STEP_OUTPUT - Yielded output "result" of type "DataFrame". (Type check passed).
-[32m2025-08-24 13:44:14 +0800[0m - dagster - [34mDEBUG[0m - pandas_job - cc64d4d6-1dcb-48da-91c7-482f7b89ea48 - 24637 - summary_statistics - ASSET_MATERIALIZATION - Materialized value summary_statistics.
-[32m2025-08-24 13:44:14 +0800[0m - dagster - [34mDEBUG[0m - pandas_job - cc64d4d6-1dcb-48da-91c7-482f7b89ea48 - 24637 - summary_statistics - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
-[32m2025-08-24 13:44:14 +0800[0m - dagster - [34mDEBUG[0m - pandas_job - cc64d4d6-1dcb-48da-91c7-482f7b89ea48 - 24637 - summary_statistics - STEP_SUCCESS - Finished execution of step "summary_statistics" in 1.48s.
